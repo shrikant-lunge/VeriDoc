@@ -1,0 +1,189 @@
+/* ===== GLOBAL ===== */
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(120deg, #5f72ff, #9b23ea, #23a6d5);
+    background-size: 300% 300%;
+    animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== FLOATING ORBS ===== */
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.45;
+    animation: float 18s infinite linear;
+    pointer-events: none;
+}
+
+.orb.one {
+    width: 300px;
+    height: 300px;
+    background: #ffffff;
+    top: 10%;
+    left: 15%;
+}
+
+.orb.two {
+    width: 400px;
+    height: 400px;
+    background: #7f9cff;
+    bottom: 10%;
+    right: 10%;
+    animation-duration: 22s;
+}
+
+.orb.three {
+    width: 250px;
+    height: 250px;
+    background: #ffb3ff;
+    top: 60%;
+    left: 60%;
+    animation-duration: 26s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-60px); }
+    100% { transform: translateY(0); }
+}
+
+/* ===== CARD ===== */
+.card {
+    position: relative;
+    z-index: 10;
+    width: 500px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(18px);
+    border-radius: 28px;
+    padding: 34px;
+    box-shadow: 0 40px 90px rgba(0,0,0,0.35);
+}
+
+/* ===== HEADER ===== */
+.header {
+    text-align: center;
+    margin-bottom: 26px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 38px;
+}
+
+.header p {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* ===== TABS ===== */
+.tabs {
+    display: flex;
+    background: #eee;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 26px;
+}
+
+.tabs button {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    background: transparent;
+}
+
+.tabs button.active {
+    background: linear-gradient(135deg, #5f72ff, #9b23ea);
+    color: white;
+    font-weight: 600;
+}
+
+/* ===== SECTIONS ===== */
+.section { display: none; }
+.section.active { display: block; }
+
+/* ===== FILE INPUT ===== */
+.file-box {
+    position: relative;
+    border: 2px dashed #aaa;
+    border-radius: 18px;
+    padding: 26px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.file-box input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-label {
+    font-weight: 600;
+}
+
+.file-name {
+    margin-top: 8px;
+    font-size: 13px;
+}
+
+/* ===== INPUT & BUTTON ===== */
+input[type="text"] {
+    width: 100%;
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid #ccc;
+    margin-bottom: 16px;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 16px;
+    font-size: 16px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #5f72ff, #9b23ea);
+    color: white;
+}
+
+/* ===== RESULTS ===== */
+.result-box {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 14px;
+    display: none;
+}
+
+.success { background: #e8f8f1; color: #1e7f5c; }
+.error { background: #fdecea; color: #b3261e; }
+.code-box { background: #eef2ff; color: #2f3ab2; font-weight: 600; }
+
+/* ===== FOOTER ===== */
+.footer {
+    margin-top: 22px;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+}

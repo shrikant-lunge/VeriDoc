@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VeriDoc</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Live background -->
+<div class="orb one"></div>
+<div class="orb two"></div>
+<div class="orb three"></div>
+
+<div class="card">
+
+    <div class="header">
+        <h1>📄 VeriDoc</h1>
+        <p>Secure Document Upload & Verification</p>
+    </div>
+
+    <div class="tabs">
+        <button id="uploadBtn" class="active" onclick="showUpload()">Upload</button>
+        <button id="verifyBtn" onclick="showVerify()">Verify</button>
+    </div>
+
+    <!-- UPLOAD -->
+    <div id="uploadTab" class="section active">
+        <h2>Upload Document</h2>
+        <p class="desc">Upload a document to generate a verification code.</p>
+
+        <form id="uploadForm">
+            <div class="file-box">
+                <input type="file" name="document" id="uploadFile" required>
+                <div class="file-label">Click to select document</div>
+                <div id="uploadFileName" class="file-name">No file selected</div>
+            </div>
+
+            <button class="btn" type="submit">Upload</button>
+        </form>
+
+        <div id="uploadSuccess" class="result-box success"></div>
+        <div id="uploadError" class="result-box error"></div>
+        <div id="uploadCode" class="result-box code-box"></div>
+    </div>
+
+    <!-- VERIFY -->
+    <div id="verifyTab" class="section">
+        <h2>Verify Document</h2>
+        <p class="desc">Select the same document and enter the verification code.</p>
+
+        <form id="verifyForm">
+            <div class="file-box">
+                <input type="file" name="document" id="verifyFile" required>
+                <div class="file-label">Click to select document</div>
+                <div id="verifyFileName" class="file-name">No file selected</div>
+            </div>
+
+            <input type="text" id="code" placeholder="Verification Code" required>
+
+            <button class="btn" type="submit">Verify</button>
+        </form>
+
+        <div id="verifyResult" class="result-box success"></div>
+    </div>
+
+    <div class="footer">
+        © 2026 VeriDoc • Secure • Reliable • Authentic
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
